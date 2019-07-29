@@ -1,0 +1,28 @@
+<br />
+<h4>Subjects</h4>
+<table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Visible</th>
+        <th>Position</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @subjects.each do |sub| %>
+        <tr>
+          <td><%= sub.id %></td>
+          <td><%= sub.name %></td>
+          <td><%= sub.visible %></td>
+          <td><%= sub.position %></td>
+          <td>
+            <%= link_to 'Show', subject_path(sub) %>
+            <%= link_to 'Edit', edit_subject_path(sub) %>
+            <%= link_to 'Delete', '#' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+</table>
