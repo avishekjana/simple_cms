@@ -1,0 +1,42 @@
+<%= form_with(model: page, local: true) do |f| %>
+  <% if page.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(page.errors.count, "error") %> prohibited this page from being saved:</h2>
+
+      <ul>
+      <% page.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :permalink %>
+    <%= f.text_field :permalink, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :position %>
+    <%= f.number_field :position, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :visible %>
+    <%= f.check_box :visible %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :subject_id %>
+    <%= f.select :subject_id, options_for_select(Subject.all.map { |e| [e.name, e.id] }), class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
