@@ -6,7 +6,7 @@
         <%= form_for(@subject) do |f| %>
 
           <% if @subject.errors.any? %>
-            <ul>
+            <ul class="form-errors">
               <% @subject.errors.full_messages.each do |msg| %>
                 <li><%= msg %></li>
               <% end %>
