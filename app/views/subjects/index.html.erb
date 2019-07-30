@@ -1,28 +1,36 @@
-<br />
-<h4>Subjects</h4>
-<table class="table">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Visible</th>
-        <th>Position</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @subjects.each do |sub| %>
-        <tr>
-          <td><%= sub.id %></td>
-          <td><%= sub.name %></td>
-          <td><%= sub.visible %></td>
-          <td><%= sub.position %></td>
-          <td>
-            <%= link_to 'Show', subject_path(sub) %>
-            <%= link_to 'Edit', edit_subject_path(sub) %>
-            <%= link_to 'Delete', '#' %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-</table>
+<div class="row">
+  <div class="col-lg-12">
+    <div class="card">
+      <div class="card-header d-flex">
+        <span class="flex-grow-1">Subjects</span>
+        <%= link_to 'Add New Subject', new_subject_path, class: 'btn btn-primary' %>
+      </div>
+      <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Visible</th>
+              <th>Position</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @subjects.each do |sub| %>
+              <tr>
+                <td><%= sub.id %></td>
+                <td><%= sub.name %></td>
+                <td><%= sub.visible %></td>
+                <td><%= sub.position %></td>
+                <td>
+                  <%= link_to 'Show', subject_path(sub) %>
+                  <%= link_to 'Edit', edit_subject_path(sub) %>
+                  <%= link_to 'Delete', subject_path(sub), method: :delete %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-lg-6">
+    <div class="card">
+      <div class="card-header">New subject</div>
+      <div class="card-body">
+        <%= form_for(@subject) do |f| %>
+
+          <% if @subject.errors.any? %>
+            <ul class="form-errors">
+              <% @subject.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+            </ul>
+          <% end %>
+
+          <div class="form-group">
+            <%= f.label :name %>
+            <%= f.text_field :name, class: 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= f.label :position %>
+            <%= f.number_field :position, class: 'form-control' %>
+          </div>
+          <div class="form-group form-check">
+            <%= f.check_box :visible, class: 'form-check-input' %>
+            <%= f.label :visible, class: 'form-check-label' %>
+          </div>
+          <br />
+          <%= f.submit "Save", class: 'btn btn-primary' %>
+          <%= link_to "Cancel", subjects_path, class: 'btn' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

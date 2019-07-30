@@ -1,5 +1,15 @@
 @media (min-width: 1200px) {
   .container {
-    max-width: 1340px !important;
+    max-width: 1140px !important;
   }
+}
+.content {
+  padding: 30px 0px;
+}
+.form-errors {
+  list-style: none;
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 5px 15px;
 }
