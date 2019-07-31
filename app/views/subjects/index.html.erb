@@ -20,7 +20,9 @@
               <tr>
                 <td><%= sub.id %></td>
                 <td><%= sub.name %></td>
-                <td><%= sub.visible %></td>
+                <td>
+                  <%= get_visibility_status(sub.visible) %>
+                </td>
                 <td><%= sub.position %></td>
                 <td>
                   <%= link_to 'Show', subject_path(sub) %>
