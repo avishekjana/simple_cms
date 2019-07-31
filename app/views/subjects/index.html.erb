@@ -12,7 +12,7 @@
               <th>Name</th>
               <th>Visible</th>
               <th>Position</th>
-              <th>Actions</th>
+              <th colspan="3">Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -24,7 +24,11 @@
                 <td><%= sub.position %></td>
                 <td>
                   <%= link_to 'Show', subject_path(sub) %>
+                </td>
+                <td>
                   <%= link_to 'Edit', edit_subject_path(sub) %>
+                </td>
+                <td>
                   <%= link_to 'Delete', subject_path(sub), method: :delete %>
                 </td>
               </tr>

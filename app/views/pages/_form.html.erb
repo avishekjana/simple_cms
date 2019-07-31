@@ -17,6 +17,11 @@
   </div>
 
   <div class="form-group">
+    <%= f.label :subject_id %>
+    <%= f.select :subject_id, options_for_select(Subject.all.map { |e| [e.name, e.id] }), {}, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
     <%= f.label :permalink %>
     <%= f.text_field :permalink, class: 'form-control' %>
   </div>
@@ -26,17 +31,13 @@
     <%= f.number_field :position, class: 'form-control' %>
   </div>
 
-  <div class="form-group">
-    <%= f.label :visible %>
-    <%= f.check_box :visible %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :subject_id %>
-    <%= f.select :subject_id, options_for_select(Subject.all.map { |e| [e.name, e.id] }), class: 'form-control' %>
+  <div class="form-group form-check">
+    <%= f.check_box :visible, class: 'form-check-input' %>
+    <%= f.label :visible, class: 'form-check-label' %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Save", class: 'btn btn-primary' %>
+    <%= link_to "Cancel", pages_path, class: 'btn' %>
   </div>
 <% end %>

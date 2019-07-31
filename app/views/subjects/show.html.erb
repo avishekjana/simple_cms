@@ -1,1 +1,31 @@
 <h4><%= @sub.name %></h4>
+
+<div class="row">
+  <div class="col-lg-12">
+    <div class="card">
+      <div class="card-header d-flex">
+        Pages
+      </div>
+      <table  class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Permalink</th>
+            <th>Position</th>
+            <th>Visible</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @sub.pages.each do |page| %>
+            <tr>
+              <td><%= page.name %></td>
+              <td><%= page.permalink %></td>
+              <td><%= page.position %></td>
+              <td><%= page.visible %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

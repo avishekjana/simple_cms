@@ -1,5 +1,10 @@
-<h1>New Page</h1>
-
-<%= render 'form', page: @page %>
-
-<%= link_to 'Back', pages_path %>
+<div class="row">
+  <div class="col-lg-6">
+    <div class="card">
+      <div class="card-header">New Page</div>
+      <div class="card-body">
+        <%= render 'form', page: @page %>
+      </div>
+    </div>
+  </div>
+</div>
