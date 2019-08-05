@@ -13,3 +13,6 @@
   border: 1px solid #f5c6cb;
   padding: 5px 15px;
 }
+.logout-link {
+  color: rgba(0, 0, 0, 0.5)
+}
