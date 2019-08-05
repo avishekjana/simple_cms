@@ -19,6 +19,6 @@ class PublicController < ApplicationController
   protected
 
     def set_subjects
-      @subjects = Subject.all
+      @subjects = Subject.published
     end
 end

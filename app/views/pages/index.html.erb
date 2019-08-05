@@ -22,7 +22,7 @@
               <td><%= page.name %></td>
               <td><%= page.permalink %></td>
               <td><%= page.position %></td>
-              <td><%= page.visible %></td>
+              <td><%= get_visibility_status(page.visible) %></td>
               <td><%= page.subject.name %></td>
               <td><%= link_to 'Show', page %></td>
               <td><%= link_to 'Edit', edit_page_path(page) %></td>

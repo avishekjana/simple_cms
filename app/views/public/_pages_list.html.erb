@@ -1,5 +1,5 @@
 <div class="list-group">
-  <% @subject.pages.each do |page| %>
+  <% @subject.pages.published.each do |page| %>
     <%= link_to page.name, "/public/pages/#{@subject.id}/sections/#{page.id}", class: "list-group-item list-group-item-action #{is_active_page?(page.id, params[:page_id])}" %>
   <% end %>
 </div>

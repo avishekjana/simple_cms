@@ -8,9 +8,8 @@
       <table class="table">
         <thead>
           <tr>
-            <th>Page</th>
             <th>Name</th>
-            <th>Content type</th>
+            <th>Page</th>
             <th>Visible</th>
             <th>Position</th>
             <th colspan="3"></th>
@@ -20,10 +19,9 @@
         <tbody>
           <% @sections.each do |section| %>
             <tr>
-              <td><%= section.page.name %></td>
               <td><%= section.name %></td>
-              <td><%= section.content_type %></td>
-              <td><%= section.visible %></td>
+              <td><%= section.page.name %></td>
+              <td><%= get_visibility_status(section.visible) %></td>
               <td><%= section.position %></td>
               <td><%= link_to 'Show', section %></td>
               <td><%= link_to 'Edit', edit_section_path(section) %></td>

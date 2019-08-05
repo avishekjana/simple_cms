@@ -5,8 +5,8 @@
     <%= render(partial: "pages_list") %>
   </div>
   <div class="col-lg-8">
-    <% if @page.sections.present? %>
-      <% @page.sections.each do |section| %>
+    <% if @page.sections.published.present? %>
+      <% @page.sections.published.each do |section| %>
         <h5><%= section.name %></h5>
         <p><%= section.content %></p>
       <% end %>

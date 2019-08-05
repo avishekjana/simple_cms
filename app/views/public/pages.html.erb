@@ -1,6 +1,6 @@
 <h2><%= "#{@subject.name}" %></h2>
 <br />
-<% if @subject.pages.present? %>
+<% if @subject.pages.published.present? %>
   <div class="row">
     <div class="col-lg-4">
       <%= render(partial: "pages_list") %>
