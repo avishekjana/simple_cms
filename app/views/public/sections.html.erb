@@ -1,4 +1,6 @@
-<h2><%= "Subject: #{@subject.name}" %></h2>
+<h2><%= "#{@subject.name}" %></h2>
+<span class="text-muted">Last updated <%= time_ago_in_words(@subject.updated_at) %> ago</span>
+<br />
 <br />
 <div class="row">
   <div class="col-lg-4">
