@@ -5,10 +5,13 @@
     <%= render(partial: "pages_list") %>
   </div>
   <div class="col-lg-8">
-    
-    <% @page.sections.each do |section| %>
-      <h5><%= section.name %></h5>
-      <p><%= section.content %></p>
+    <% if @page.sections.present? %>
+      <% @page.sections.each do |section| %>
+        <h5><%= section.name %></h5>
+        <p><%= section.content %></p>
+      <% end %>
+    <% else %>
+      <p class="alert alert-warning">No content available.</p>
     <% end %>
   </div>
 </div>

@@ -1,7 +1,11 @@
-<h2><%= "Subject: #{@subject.name}" %></h2>
+<h2><%= "#{@subject.name}" %></h2>
 <br />
-<div class="row">
-  <div class="col-lg-4">
-    <%= render(partial: "pages_list") %>
+<% if @subject.pages.present? %>
+  <div class="row">
+    <div class="col-lg-4">
+      <%= render(partial: "pages_list") %>
+    </div>
   </div>
-</div>
+<% else %>
+  <p class="alert alert-warning">No content available.</p>
+<% end %>

@@ -12,29 +12,24 @@
   <% end %>
 
   <div class="form-group">
-    <%= form.select :page_id, options_for_select(Page.all.map { |e| [e.name, e.id] }, section.page_id) %>
-  </div>
-
-  <div class="form-group">
     <%= form.label :name %>
     <%= form.text_field :name, class: 'form-control' %>
   </div>
-
+  <div class="form-group">
+    <%= form.select :page_id, options_for_select(Page.all.map { |e| [e.name, e.id] }, section.page_id), {}, { class: "form-control" } %>
+  </div>
   <div class="form-group">
     <%= form.label :content_type %>
     <%= form.text_field :content_type, class: 'form-control' %>
   </div>
-
   <div class="form-group">
     <%= form.label :content %>
     <%= form.text_area :content, class: 'form-control' %>
   </div>
-
   <div class="form-group">
     <%= form.label :visible %>
     <%= form.check_box :visible %>
   </div>
-
   <div class="form-group">
     <%= form.label :position %>
     <%= form.number_field :position, class: 'form-control' %>
